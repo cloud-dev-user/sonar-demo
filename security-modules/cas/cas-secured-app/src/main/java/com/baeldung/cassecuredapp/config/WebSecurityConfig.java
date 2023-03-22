@@ -52,8 +52,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
           .exceptionHandling().authenticationEntryPoint(authenticationEntryPoint())
           .and()
           .addFilterBefore(singleSignOutFilter, CasAuthenticationFilter.class)
-          .addFilterBefore(logoutFilter, LogoutFilter.class)
-          .csrf().ignoringAntMatchers("/exit/cas");
+          .addFilterBefore(logoutFilter, LogoutFilter.class);
+          //.csrf().ignoringAntMatchers("/exit/cas");
     }
 
     @Override
